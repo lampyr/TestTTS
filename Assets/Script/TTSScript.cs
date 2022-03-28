@@ -10,7 +10,7 @@ public class TTSScript : MonoBehaviour
     public GameObject inputField;
     public GameObject textShow;
     private TTSSpeaker speaker;
-    private VisualText text;
+    private string text;
     // Start is called before the first frame update
     void Start()
     {
@@ -31,9 +31,8 @@ public class TTSScript : MonoBehaviour
 
     public void Speak()
     {
-        
-        
-        TTS.SayAsync(text.text, speaker);
+        text = textShow.GetComponent<Text>().text ;
+        TTS.SayAsync(text, speaker);
     }
 
     

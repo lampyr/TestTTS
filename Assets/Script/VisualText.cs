@@ -6,29 +6,28 @@ using UnityEngine.UI;
 
 public class VisualText : MonoBehaviour
 {
-    public GameObject inputField;
+    public InputField inputField;
     public GameObject textShow;
-    public string text=" ";
+    public string text;
+    public string textS;
     // Start is called before the first frame update
-    
+
 
     // Update is called once per frame
-    
+    private void Start()
+    {
+        inputField.lineType = InputField.LineType.MultiLineNewline;
+
+    }
 
     void Update()
     {
-        //int idtext = text.;
-        //text += inputField.GetComponent<Text>().text.Substring(idtext, 1);
-        ////text = inputField.GetComponent<Text>().text;
-        //textShow.GetComponent<Text>().text=text;
+        textShow.GetComponent<Text>().text = inputField.text;
+        
     }
 
     public void Read()
     {
-        int idtext = text.Length;
-        Debug.Log(idtext);
-        
-        text += inputField.GetComponent<Text>().text.Substring(idtext,1);
         
     }
 }
